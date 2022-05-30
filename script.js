@@ -15,8 +15,7 @@ function handleSaveButton(event) {
 }
 
 function displayTime() {
-    $(".hour").text(moment().format("MMM D, YYYY, LTS"));
-    var saveTime = JSON.parse(localStorage.getItem("scheduleTime")) || {};
+    $(".hour").text(moment().format(MMM ,D ,YYYY, LTS));
 
     for (let i = 9; i <=18; i++) {
         var timeEvent = saveTime[i] || "";
@@ -24,12 +23,7 @@ function displayTime() {
 
     }
     
-    let target = $(event.target);
-    let hour = target.siblings(".hour").text();
-    var textArea = target.siblings(".toDo").val();
-
-    saveTime[hour] = textArea;
-    localStorage.setItem("scheduleTime", JSON.stringify(saveTime));
+    
 
 }
 
@@ -37,8 +31,12 @@ function displayTime() {
 saveButton.on("click", function(event) {
     handleSaveButton();
     event.preventDefault();
-
+    
+    var saveTime = JSON.parse(localStorage.getItem("scheduleTime")) || {};
     var target = $(event.target);
     var hour = target.siblings(".hour").text();
     var textArea = target.siblings(".toDo").val();
+
+    saveTime[hour] = textArea;
+    localStorage.setItem("scheduleTime", JSON.stringify(saveTime));
 });
