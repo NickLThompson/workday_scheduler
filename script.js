@@ -23,9 +23,7 @@ function displayTime() {
         $(".container").append(createTimeBlock(i, timeEvent));
 
     }
-
-    var saveTime = JSON.parse(localStorage.getItem("scheduleTime")) || {};
-
+    
     let target = $(event.target);
     let hour = target.siblings(".hour").text();
     var textArea = target.siblings(".toDo").val();
@@ -43,7 +41,4 @@ saveButton.on("click", function(event) {
     var target = $(event.target);
     var hour = target.siblings(".hour").text();
     var textArea = target.siblings(".toDo").val();
-
-    saveTime[hour] = textArea;
-    localStorage.setItem("scheduleTime", JSON.stringify(saveTime));
 });
