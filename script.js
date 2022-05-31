@@ -7,8 +7,9 @@ var toDo = $(".toDo");
 var saveButton = $(".saveBtn");
 
 // What happens when you click the save button
-function handleSaveButton(event) {
+function handleSaveButton() {
     localStorage.setItem("To Do: ", toDo.val());
+
     
     console.log("To Do: ", toDo.val());
     console.log(date, time)
@@ -27,16 +28,17 @@ function displayTime() {
 
 }
 
+
 // creating the click event for the save button
 saveButton.on("click", function(event) {
     handleSaveButton();
     event.preventDefault();
     
-    var saveTime = JSON.parse(localStorage.getItem("scheduleTime")) || {};
-    var target = $(event.target);
-    var hour = target.siblings(".hour").text();
-    var textArea = target.siblings(".toDo").val();
+    // var saveTime = JSON.parse(localStorage.getItem("scheduleTime")) || {};
+    // var target = $(event.target);
+    // var hour = target.siblings(".hour").text();
+    // var textArea = target.siblings(".toDo").val();
 
-    saveTime[hour] = textArea;
-    localStorage.setItem("scheduleTime", JSON.stringify(saveTime));
+    // saveTime[hour] = textArea;
+    // localStorage.setItem("scheduleTime", JSON.stringify(saveTime));
 });
