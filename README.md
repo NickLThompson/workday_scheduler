@@ -34,9 +34,9 @@ color-coded textboxes showing the current time.
 
 ## Resources
 
-[Live Site](https://nicklthompson.github.io/password-randomizer/)
+[Live Site](https://nicklthompson.github.io/workday_scheduler/)
 
-[Repository](https://github.com/NickLThompson/password-randomizer)
+[Repository](https://github.com/NickLThompson/workday_scheduler)
 
 ## Status
 
